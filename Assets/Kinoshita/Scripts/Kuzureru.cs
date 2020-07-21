@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Explosion : MonoBehaviour
+public class Kuzureru : MonoBehaviour
 {
-    public GameObject burst_spark;
     // 自身の子要素を管理するリスト
     List<GameObject> myParts = new List<GameObject>();
 
@@ -15,9 +14,6 @@ public class Explosion : MonoBehaviour
         foreach (Transform child in gameObject.transform)
         {
 
-            // ビルパーツに Rigidbody2D を追加して Kinematic にしておく
-            child.gameObject.AddComponent<Rigidbody>();
-            child.gameObject.GetComponent<Rigidbody>().isKinematic = true;
 
             // 子要素リストにパーツを追加
             myParts.Add(child.gameObject);
@@ -54,17 +50,11 @@ public class Explosion : MonoBehaviour
 
     void ExplodeM()
     {
+
         // 各パーツをふっとばす
         foreach (GameObject obj in myParts)
         {
-
-            // 飛ばすパワーと回転をランダムに設定
-            Vector3 forcePower = new Vector3(Random.Range(-30, 30), Random.Range(-30, 30), Random.Range(-30, 30));
-
-
-            // パーツをふっとばす！
             obj.GetComponent<Rigidbody>().isKinematic = false;
-            obj.GetComponent<Rigidbody>().AddForce(forcePower, ForceMode.Impulse);
         }
     }
 }
