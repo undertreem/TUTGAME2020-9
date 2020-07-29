@@ -29,7 +29,8 @@ public class Cutter : MonoBehaviour
             //カッター射出時の音
             AudioSource.PlayClipAtPoint(CutterSound, transform.position);
 
-        }
+           
 
+        }
     }
 }
