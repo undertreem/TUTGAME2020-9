@@ -12,7 +12,7 @@ public class MoveSphere : MonoBehaviour
     }
     void Update()
     {
-        transform.localScale += new Vector3(0.5f, 0.5f, 0.5f);
+        transform.localScale += new Vector3(0.4f, 0.4f, 0.4f);
 
     }
     void BrokeWave()

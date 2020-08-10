@@ -10,10 +10,12 @@ public class Move : MonoBehaviour
     Vector3 target;
     Rigidbody rigid;
 
+
     // Start is called before the first frame update
     void Start()
     {
-        gameObject.AddComponent<Rigidbody>();
+        rigid = this.gameObject.AddComponent<Rigidbody>();
+
         target = transform.position;
     }
     // Update is called once per frame
