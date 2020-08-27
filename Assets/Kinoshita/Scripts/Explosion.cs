@@ -5,66 +5,59 @@ using UnityEngine;
 public class Explosion : MonoBehaviour
 {
     public GameObject burst_spark;
-    // 自身の子要素を管理するリスト
-    List<GameObject> myParts = new List<GameObject>();
+    public float Torque;
+    public float Power;
+    private List<GameObject> myParts = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
     {
-        // 自分の子要素をチェック
         foreach (Transform child in gameObject.transform)
         {
-
-            // ビルパーツに Rigidbody2D を追加して Kinematic にしておく
             child.gameObject.AddComponent<Rigidbody>();
             child.gameObject.GetComponent<Rigidbody>().isKinematic = true;
 
-            // 子要素リストにパーツを追加
             myParts.Add(child.gameObject);
 
         }
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            ExplodeM();
-        }
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.CompareTag("Player"))
         {
             ExplodeM();
+            Instantiate(burst_spark, transform.position, Quaternion.identity);
         }
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if (hit.gameObject.tag == "Player")
+        if (hit.gameObject.CompareTag("Player"))
         {
             ExplodeM();
+            Instantiate(burst_spark, transform.position, Quaternion.identity);
         }
     }
 
 
-
+    //吹き飛ばし
     void ExplodeM()
     {
-        // 各パーツをふっとばす
         foreach (GameObject obj in myParts)
         {
+            Vector3 forcePower = new Vector3(Random.Range(-Power, Power), Random.Range(-Power, Power), Random.Range(-Power, Power));
+            Vector3 TorquePower = new Vector3(Random.Range(-Torque, Torque), Random.Range(-Torque, Torque), Random.Range(-Torque, Torque));
 
-            // 飛ばすパワーと回転をランダムに設定
-            Vector3 forcePower = new Vector3(Random.Range(-30, 30), Random.Range(-30, 30), Random.Range(-30, 30));
-
-
-            // パーツをふっとばす！
             obj.GetComponent<Rigidbody>().isKinematic = false;
             obj.GetComponent<Rigidbody>().AddForce(forcePower, ForceMode.Impulse);
+            obj.GetComponent<Rigidbody>().AddTorque(TorquePower,ForceMode.Impulse);
         }
     }
 }
