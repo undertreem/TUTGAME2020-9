@@ -29,23 +29,15 @@ public class KickBreak : MonoBehaviour
     {
 
     }
-
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            Explode();
-        }
-    }
-
-    private void OnControllerColliderHit(ControllerColliderHit hit)
-    {
-        if (hit.gameObject.CompareTag("Player"))
+        if (other.gameObject.name == "KickCollision")
         {
             Explode();
             Instantiate(BreakEffect, transform.position, Quaternion.identity);
         }
     }
+
 
 
 
