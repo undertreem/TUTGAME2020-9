@@ -28,9 +28,18 @@ public class BlastExplosion : MonoBehaviour
 
     }
 
-    void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("ブラスト"))
+        if (other.gameObject.CompareTag("Player"))
+        {
+            ExplodeM();
+            Instantiate(burst_spark, transform.position, Quaternion.identity);
+        }
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.gameObject.CompareTag("Player"))
         {
             ExplodeM();
             Instantiate(burst_spark, transform.position, Quaternion.identity);
