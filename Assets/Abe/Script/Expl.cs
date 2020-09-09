@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Explode : MonoBehaviour
+public class Expl : MonoBehaviour
 {
     // 自身の子要素を管理するリスト
     List<GameObject> myParts = new List<GameObject>();
@@ -13,17 +13,14 @@ public class Explode : MonoBehaviour
         // 自分の子要素をチェック
         foreach (Transform child in gameObject.transform)
         {
-
             // ビルパーツに Rigidbody2D を追加して Kinematic にしておく
             child.gameObject.AddComponent<Rigidbody>();
             child.gameObject.GetComponent<Rigidbody>().isKinematic = true;
 
             // 子要素リストにパーツを追加
             myParts.Add(child.gameObject);
-
         }
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -35,21 +32,18 @@ public class Explode : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag=="Player")
+        if (other.gameObject.tag == "Player")
         {
             ExplodeM();
         }
     }
-
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if(hit.gameObject.tag=="Player")
+        if (hit.gameObject.tag == "Player")
         {
             ExplodeM();
         }
     }
-
-
 
     void ExplodeM()
     {
@@ -59,8 +53,8 @@ public class Explode : MonoBehaviour
         {
 
             // 飛ばすパワーと回転をランダムに設定
-            Vector3 forcePower = new Vector3(Random.Range(-30, 30), Random.Range(-30, 30),Random.Range(-30,30));
-      
+            Vector3 forcePower = new Vector3(Random.Range(-10, 10), Random.Range(-30, 30), Random.Range(-5, 5));
+
 
             // パーツをふっとばす！
             obj.GetComponent<Rigidbody>().isKinematic = false;
