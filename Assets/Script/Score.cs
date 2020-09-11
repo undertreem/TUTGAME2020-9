@@ -6,11 +6,11 @@ using UnityEngine.UI;
 public class Score : MonoBehaviour
 {
     int ScorePoint = 0;
-    int VenderScore = 10;
-    int HouseScore = 10;
-    int SoukoScore = 10;
-    int BuildingScore = 10;
-    int TreeScore = 10;
+    int VenderScore = 150;
+    int HouseScore = 400;
+    int SoukoScore = 600;
+    int BuildingScore = 1000;
+    int TreeScore = 200;
 
     public void GetVender()
     {

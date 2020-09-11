@@ -19,6 +19,7 @@ public class MoveSphere : MonoBehaviour
     {
         Destroy(this.gameObject);
     }
+    /*
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player") == false)
@@ -27,4 +28,5 @@ public class MoveSphere : MonoBehaviour
             //Destroy(this.gameObject);
         }
     }
+    */
 }
