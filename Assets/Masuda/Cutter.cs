@@ -15,7 +15,7 @@ public class Cutter : MonoBehaviour
     {
         timer += Time.deltaTime;
         // もしもzキーを押したならば（条件）
-        if (Input.GetKeyDown(KeyCode.Z) && timer > timeBetweenShot)
+        if (Input.GetKeyDown(KeyCode.J) && timer > timeBetweenShot)
         {
             timer = 0.0f;
             power = 1000.0f;
