@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ChickenKick : MonoBehaviour
 {
+    public GameObject KickEffect;
     public AudioClip KickSound;
 
     void Update()
@@ -15,8 +16,12 @@ public class ChickenKick : MonoBehaviour
         {
             transform.Translate(p);
 
-            //音
-            AudioSource.PlayClipAtPoint(KickSound, transform.position);
+            //サウンド再生
+            AudioSource sound_kanri = GetComponent<AudioSource>();
+            sound_kanri.PlayOneShot(KickSound);
+
+            //エフェクト
+            Instantiate(KickEffect, transform.position, Quaternion.identity);　//エフェクト発生
 
         }
         if (Input.GetKeyUp(KeyCode.K))
