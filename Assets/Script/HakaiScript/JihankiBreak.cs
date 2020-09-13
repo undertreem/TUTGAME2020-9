@@ -7,6 +7,7 @@ public class JihankiBreak : MonoBehaviour
     public GameObject BreakEffect;
     public float Torque;
     public float Power;
+    public AudioClip BreakSound;
     private float HP = 150;
     private float DamageCount;
     bool Bung = false;
@@ -49,6 +50,10 @@ public class JihankiBreak : MonoBehaviour
             Instantiate(BreakEffect, transform.position, Quaternion.identity);　//エフェクト発生
             Score.GetComponent<Score>().GetVender();//Scoreのメソッド実行
             DamageCount = 0;
+
+            //サウンド再生
+            AudioSource sound_kanri = GetComponent<AudioSource>();
+            sound_kanri.PlayOneShot(BreakSound);
 
             var DestroyGameObject = gameObject.GetComponent<BoxCollider>();　　//BoxCollider削除用インスタンス作成
             Destroy(DestroyGameObject);　　//BoxCollider削除
