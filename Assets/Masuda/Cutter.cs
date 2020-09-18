@@ -9,7 +9,7 @@ public class Cutter : MonoBehaviour
     private float timer = 0.0f;
     private float timeBetweenShot = 4.0f;
     private float power = 1000.0f;
-    private float downforce = -2000.0f;
+    
 
     void FixedUpdate()
     {
