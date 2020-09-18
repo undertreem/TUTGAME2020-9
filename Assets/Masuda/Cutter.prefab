@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6267467712832785778}
   - component: {fileID: 1418663819757619074}
   - component: {fileID: 5019995887664509428}
+  - component: {fileID: -2341493673777361320}
   m_Layer: 0
   m_Name: Cutter
   m_TagString: Untagged
@@ -123,3 +124,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63ec2c816140a8e41a4ec485f4c8e4df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-2341493673777361320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6961119836935489928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 992d0ac49630d464f9a2a7f36f99f157, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 0
