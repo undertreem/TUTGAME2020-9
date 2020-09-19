@@ -15,8 +15,12 @@ public class GameMove : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {     
         moveVec = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
-        this.transform.Translate(moveVec * speed * Time.deltaTime);
+        if(moveVec != Vector3.zero)
+        {
+            this.transform.rotation = Quaternion.LookRotation(moveVec);
+            this.transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        }
     }
 }

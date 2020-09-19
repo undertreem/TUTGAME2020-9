@@ -5,21 +5,22 @@ using UnityEngine.UI;
 
 public class APScript : MonoBehaviour
 {
-    private float esaPoint = 0.0f;
+    //エサのスクリプト
+    private static float esaPoint = 0.0f;
     private GameObject esaText0b;
     private Text esaText;
 
     // Start is called before the first frame update
     void Start()
     {
-        esaText0b = GameObject.Find("AP");
+        esaText0b = GameObject.Find("EP");
         esaText = esaText0b.GetComponent<Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        esaText.text = "AP : " + esaPoint;
+        esaText.text = "EP : " + esaPoint;
     }
 
     void OnTriggerEnter(Collider other)
@@ -29,5 +30,9 @@ public class APScript : MonoBehaviour
             esaPoint++;
             other.gameObject.SetActive(false);
         }
+    }
+    public static float EsaPGetter()
+    {
+        return esaPoint;
     }
 }
