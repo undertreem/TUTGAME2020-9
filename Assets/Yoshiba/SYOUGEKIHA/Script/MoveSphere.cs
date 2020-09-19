@@ -4,22 +4,24 @@ using UnityEngine;
 
 public class MoveSphere : MonoBehaviour
 {
+    private GameObject player;
     // Start is called before the first frame update
     void Start()
     {
         Application.targetFrameRate = 60;
-        Invoke("BrokeWave", 0.8f);
+        player = GameObject.FindGameObjectWithTag("Player");
+　　　  Invoke("BrokeWave", 0.8f);
     }
     void Update()
     {
         transform.localScale += new Vector3(0.4f, 0.4f, 0.4f);
-
+        this.transform.position = player.transform.position;
     }
     void BrokeWave()
     {
         Destroy(this.gameObject);
     }
-    /*
+    
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player") == false)
@@ -28,5 +30,5 @@ public class MoveSphere : MonoBehaviour
             //Destroy(this.gameObject);
         }
     }
-    */
+    
 }
