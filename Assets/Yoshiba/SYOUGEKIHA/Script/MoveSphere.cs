@@ -26,7 +26,7 @@ public class MoveSphere : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") == false)
         {
-            Destroy(other.gameObject);
+           // Destroy(other.gameObject);
             //Destroy(this.gameObject);
         }
     }
