@@ -7,7 +7,7 @@ public class HouseBreak : MonoBehaviour
     public GameObject BreakEffect;
     public float Torque;
     public float Power;
-    public AudioClip BreakSound;
+    public AudioClip AttackSound, ExplosionSound, BreakSound;
     private float HP = 400;
     private float DamageCount;
     bool Bung = false;
@@ -52,8 +52,12 @@ public class HouseBreak : MonoBehaviour
             DamageCount = 0;
 
             //サウンド再生
-            AudioSource sound_kanri = GetComponent<AudioSource>();
-            sound_kanri.PlayOneShot(BreakSound);
+            AudioSource sound1 = GetComponent<AudioSource>();
+            sound1.PlayOneShot(AttackSound);
+            AudioSource sound2 = GetComponent<AudioSource>();
+            sound2.PlayOneShot(ExplosionSound);
+            AudioSource sound3 = GetComponent<AudioSource>();
+            sound3.PlayOneShot(BreakSound);
 
             var DestroyGameObject = gameObject.GetComponent<BoxCollider>();　　//BoxCollider削除用インスタンス作成
             Destroy(DestroyGameObject);　　//BoxCollider削除
