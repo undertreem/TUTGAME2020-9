@@ -54,10 +54,8 @@ public class JihankiBreak : MonoBehaviour
             //サウンド再生
             AudioSource sound1 = GetComponent<AudioSource>();
             sound1.PlayOneShot(AttackSound);
-            AudioSource sound2 = GetComponent<AudioSource>();
-            sound2.PlayOneShot(ExplosionSound);
-            AudioSource sound3 = GetComponent<AudioSource>();
-            sound3.PlayOneShot(BreakSound);
+            sound1.PlayOneShot(ExplosionSound);
+            sound1.PlayOneShot(BreakSound);
 
             var DestroyGameObject = gameObject.GetComponent<BoxCollider>();　　//BoxCollider削除用インスタンス作成
             Destroy(DestroyGameObject);　　//BoxCollider削除
