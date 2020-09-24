@@ -59,7 +59,7 @@ public class TreeBreak : MonoBehaviour
             AudioSource sound3 = GetComponent<AudioSource>();
             sound3.PlayOneShot(BreakSound);
 
-            var DestroyGameObject = gameObject.GetComponent<BoxCollider>();　　//BoxCollider削除用インスタンス作成
+            var DestroyGameObject = gameObject.GetComponent<CapsuleCollider>();　　//BoxCollider削除用インスタンス作成
             Destroy(DestroyGameObject);　　//BoxCollider削除
         }
     }

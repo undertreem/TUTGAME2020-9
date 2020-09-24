@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class ChangeModel : MonoBehaviour
 {
-    public GameObject playerModel1;
-    public GameObject playerModel2;
-    public GameObject playerModel3;
-    public GameObject Effect1, Effect2;
+    public GameObject playerModel1, playerModel2, playerModel3, playerModel4;
+    public GameObject Effect1, Effect2, Effect3;
     private float esaP;
     // Start is called before the first frame update
     void Start()
@@ -29,6 +27,7 @@ public class ChangeModel : MonoBehaviour
             playerModel1.SetActive(false);
             playerModel2.SetActive(true);
             playerModel3.SetActive(false);
+            playerModel4.SetActive(false);
             Effect1.SetActive(true);
             Destroy(Effect1, 1f);
         }
@@ -37,8 +36,18 @@ public class ChangeModel : MonoBehaviour
             playerModel1.SetActive(false);
             playerModel2.SetActive(false);
             playerModel3.SetActive(true);
+            playerModel4.SetActive(false);
             Effect2.SetActive(true);
             Destroy(Effect2, 1f);
+        }
+        if (esaP == 45)
+        {
+            playerModel1.SetActive(false);
+            playerModel2.SetActive(false);
+            playerModel3.SetActive(false);
+            playerModel4.SetActive(true);
+            Effect3.SetActive(true);
+            Destroy(Effect3, 1f);
         }
     }
 }
