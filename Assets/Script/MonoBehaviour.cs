@@ -5,12 +5,14 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
+   
     int ScorePoint = 0;
     int VenderScore = 10;
     int HouseScore = 10;
     int SoukoScore = 10;
     int BuildingScore = 10;
     int TreeScore = 10;
+    int esaScore = 10;
 
     public void GetVender()
     {
@@ -32,11 +34,15 @@ public class Score : MonoBehaviour
     {
         ScorePoint += TreeScore;
     }
+    public void Getesa()
+    {
+        ScorePoint += esaScore;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
