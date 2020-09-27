@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class HPScript : MonoBehaviour
 {
+    public GameObject HitEffect;
     private static float HPPoint = 50.0f;
     private GameObject HPText0b;
     private Text HPText;
@@ -32,6 +33,8 @@ public class HPScript : MonoBehaviour
         {
             HPPoint--;
             Destroy(other.gameObject);
+            Instantiate(HitEffect, transform.position, Quaternion.identity);　//エフェクト発生
+            Destroy(HitEffect, 1.0f);
         }
     }
     public static float HPGetter()
