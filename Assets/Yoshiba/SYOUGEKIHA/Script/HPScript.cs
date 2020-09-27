@@ -28,6 +28,11 @@ public class HPScript : MonoBehaviour
             HPPoint--;
             other.gameObject.SetActive(false);
         }
+        if(other.gameObject.CompareTag("Bullet"))
+        {
+            HPPoint--;
+            Destroy(other.gameObject);
+        }
     }
     public static float HPGetter()
     {

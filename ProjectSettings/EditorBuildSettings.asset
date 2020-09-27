@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Yoshiba/title.unity
+    guid: 3e9dbd6bcd205d14f881fbed979d92ea
+  - enabled: 1
+    path: Assets/Scenes/Yoshiba.unity
+    guid: 2a185fd9af1774c4fb996ed2c9d266f8
   m_configObjects: {}
