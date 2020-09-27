@@ -13,8 +13,8 @@ public class ChangeModel : MonoBehaviour
         playerModel1.SetActive(true);
         playerModel2.SetActive(false);
         playerModel3.SetActive(false);
-        Effect1.SetActive(false);
-        Effect2.SetActive(false);
+        //Effect1.SetActive(false);
+        //Effect2.SetActive(false);
     }
 
     // Update is called once per frame

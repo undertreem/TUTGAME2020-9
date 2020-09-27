@@ -25,11 +25,13 @@ public class Enemy : MonoBehaviour
         //この下変更＆追加
         if (Vector3.Distance(targetPos, this.transform.position) <= eneDis)
         {
+            nav.enabled = true;
             nav.destination = targetPos;
         }
         else
         {
-            nav.destination = this.transform.position;
+            nav.enabled = false;
+            
         }
     }
 }
