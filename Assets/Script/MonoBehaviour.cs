@@ -5,14 +5,18 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
-   
-    int ScorePoint = 0;
-    int VenderScore = 10;
-    int HouseScore = 10;
-    int SoukoScore = 10;
-    int BuildingScore = 10;
-    int TreeScore = 10;
-    int esaScore = 10;
+    GameObject pointText;
+    double ScorePoint = 0;
+    double buf = 1.0;
+    double VenderScore = 100;
+    double HouseScore = 400;
+    double SoukoScore = 600;
+    double BuildingScore = 1000;
+    double TreeScore = 200;
+    double HumanScore = 300;
+    double TankScore = 2000;
+    double GoldenChickenScore = 10000;
+    double EsaScore = 10;
 
     public void GetVender()
     {
@@ -34,20 +38,32 @@ public class Score : MonoBehaviour
     {
         ScorePoint += TreeScore;
     }
+    public void GetHuman()
+    {
+        ScorePoint += HumanScore;
+    }
+    public void GetTank()
+    {
+        ScorePoint += TankScore;
+    }
+    public void GetGoldenChicken()
+    {
+        ScorePoint += GoldenChickenScore;
+    }
     public void Getesa()
     {
-        ScorePoint += esaScore;
+        ScorePoint += EsaScore;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        this.pointText = GameObject.Find("Point");
     }
 
     // Update is called once per frame
     void Update()
     {
-        GetComponent<Text>().text = "Score : " + ScorePoint;
+        this.pointText.GetComponent<Text>().text = "Score : " + ScorePoint;
     }
 }
