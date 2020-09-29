@@ -22,7 +22,7 @@ public class CutterSub : MonoBehaviour
         {
             rb.AddForce(0.0f, 0.0f, downforce);
         }
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.J))
         {
             timer = 0.0f;
         }
