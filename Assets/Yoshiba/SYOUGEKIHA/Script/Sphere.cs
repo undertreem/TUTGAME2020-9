@@ -7,6 +7,7 @@ public class Sphere : MonoBehaviour
     public GameObject prefab;
     private bool flag = true;
     private float pullTime = 0.0f;
+    public AudioClip BlustSound;
     void Start()
     {
         Application.targetFrameRate = 60;
@@ -32,6 +33,8 @@ public class Sphere : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             Instantiate(prefab, transform.position, Quaternion.identity);
+            AudioSource sound1 = GetComponent<AudioSource>();
+            sound1.PlayOneShot(BlustSound);
             yield return new WaitForSeconds(1);
         }
         flag = true;

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
-    int ScorePoint = 0;
+    public int ScorePoint = 0;
     int VenderScore = 150;
     int HouseScore = 400;
     int SoukoScore = 600;
@@ -36,7 +36,7 @@ public class Score : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        ScorePoint = 0;
     }
 
     // Update is called once per frame

@@ -9,12 +9,15 @@ public class APScript : MonoBehaviour
     private static float esaPoint = 0.0f;
     private GameObject esaText0b;
     private Text esaText;
+    public AudioClip EPSound;
 
     // Start is called before the first frame update
     void Start()
     {
         esaText0b = GameObject.Find("EP");
         esaText = esaText0b.GetComponent<Text>();
+        esaPoint
+             = 0;
     }
 
     // Update is called once per frame
@@ -27,8 +30,11 @@ public class APScript : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Esa"))
         {
+            AudioSource sound2 = GetComponent<AudioSource>();
+            sound2.PlayOneShot(EPSound);
             esaPoint++;
             other.gameObject.SetActive(false);
+
         }
     }
     public static float EsaPGetter()
