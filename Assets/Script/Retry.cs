@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Retry : MonoBehaviour
 {
+    public GameObject Result;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +17,7 @@ public class Retry : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.R))
         {
+            Destroy(Result);
             OnRetry();
         }
     }

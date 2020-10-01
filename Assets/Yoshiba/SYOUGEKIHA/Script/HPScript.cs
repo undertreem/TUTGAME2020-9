@@ -14,6 +14,7 @@ public class HPScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        HPPoint = 50.0f;
         HPText0b = GameObject.Find("HP");
         HPText = HPText0b.GetComponent<Text>();
     }
