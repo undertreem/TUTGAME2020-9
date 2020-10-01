@@ -14,7 +14,7 @@ public class MoveSphere : MonoBehaviour
     }
     void Update()
     {
-        transform.localScale += new Vector3(1.0f, 1.0f, 1.0f);
+        transform.localScale += new Vector3(1.5f, 1.5f, 1.5f);
         this.transform.position = player.transform.position;
     }
     void BrokeWave()

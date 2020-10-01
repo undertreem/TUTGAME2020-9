@@ -7,7 +7,7 @@ public class Timer : MonoBehaviour
 {
     private float timeCount = 0.0f;
     private float timer = 180;
-    public GameObject timerTextOb;
+    public GameObject timerTextOb, ResultPanel, Fade;
     private Text timerText;
         // Start is called before the first frame update
     void Start()
@@ -24,5 +24,11 @@ public class Timer : MonoBehaviour
             timer--;
         }
         timerText.text = "Time : " + timer;
+
+        if (timer <= 0)
+        {
+            ResultPanel.SetActive(true);
+            Fade.SetActive(false);
+        }
     }
 }

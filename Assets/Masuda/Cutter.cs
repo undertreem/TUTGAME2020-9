@@ -26,7 +26,8 @@ public class Cutter : MonoBehaviour
             Destroy(Cutter, 4.0f);
 
             //カッター射出時の音
-            AudioSource.PlayClipAtPoint(CutterSound, transform.position);
+            AudioSource sound1 = GetComponent<AudioSource>();
+            sound1.PlayOneShot(CutterSound);
         }
 
     }
