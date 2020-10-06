@@ -96,7 +96,7 @@ public class SoukoBreak : MonoBehaviour
     {
         foreach (GameObject obj in myParts)
         {
-            Vector3 forcePower = new Vector3(Random.Range(0.0f, Power), Random.Range(-Power * 0.5f, Power * 0.5f), Random.Range(-Power * 0.5f, Power * 0.5f));
+            Vector3 forcePower = new Vector3(Random.Range(Power, Power), Random.Range(-Power * 0.5f, Power * 0.5f), Random.Range(-Power * 0.5f, Power * 0.5f));
             Vector3 TorquePower = new Vector3(Random.Range(-Torque, Torque), Random.Range(-Torque, Torque), Random.Range(-Torque, Torque));
 
             obj.GetComponent<Rigidbody>().isKinematic = false;
