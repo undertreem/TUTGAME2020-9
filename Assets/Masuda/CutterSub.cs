@@ -18,9 +18,9 @@ public class CutterSub : MonoBehaviour
     void FixedUpdate()
     {
         timer += Time.deltaTime;
-        if (timer >= 2.5f)
+        if (timer >= 2.0f)
         {
-            rb.AddForce(0.0f, 0.0f, downforce);
+            rb.AddForce(transform.forward * downforce);
         }
         if (Input.GetKeyDown(KeyCode.J))
         {

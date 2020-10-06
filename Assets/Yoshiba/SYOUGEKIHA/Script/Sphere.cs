@@ -14,19 +14,17 @@ public class Sphere : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.B))
         {
             pullTime += 1.0f;
         }
-        if (Input.GetKeyUp(KeyCode.LeftShift) && flag == true && pullTime >= 60)
+        if (flag == true && pullTime >= 60)
         {
             StartCoroutine(CreateWave());
             flag = false;
-        }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
-        {
             pullTime = 0.0f;
         }
+
     }
     IEnumerator CreateWave()
     {
