@@ -18,7 +18,7 @@ public class Sphere : MonoBehaviour
         {
             pullTime += 1.0f;
         }
-        if (flag == true && pullTime >= 60)
+        if (flag == true && pullTime >= 120)
         {
             StartCoroutine(CreateWave());
             flag = false;

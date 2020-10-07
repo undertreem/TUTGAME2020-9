@@ -36,6 +36,14 @@ public class APScript : MonoBehaviour
             other.gameObject.SetActive(false);
 
         }
+        if (other.gameObject.CompareTag("BigEsa"))
+        {
+            AudioSource sound2 = GetComponent<AudioSource>();
+            sound2.PlayOneShot(EPSound);
+            esaPoint+=5;
+            other.gameObject.SetActive(false);
+
+        }
     }
     public static float EsaPGetter()
     {
