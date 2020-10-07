@@ -23,7 +23,7 @@ public class ChangeModel : MonoBehaviour
     {
         esaP = APScript.EsaPGetter(); 
         //取った時に変わる個数
-        if(esaP == 10)
+        if(esaP < 20 && esaP >= 10)
         {
             playerModel1.SetActive(false);
             playerModel2.SetActive(true);
@@ -32,7 +32,7 @@ public class ChangeModel : MonoBehaviour
             Effect1.SetActive(true);
             Destroy(Effect1, 1f);
         }
-        if(esaP == 20)
+        if(esaP < 30 && esaP >= 20)
         {
             playerModel1.SetActive(false);
             playerModel2.SetActive(false);
@@ -41,7 +41,7 @@ public class ChangeModel : MonoBehaviour
             Effect2.SetActive(true);
             Destroy(Effect2, 1f);
         }
-        if (esaP == 45)
+        if (esaP >= 45)
         {
             playerModel1.SetActive(false);
             playerModel2.SetActive(false);

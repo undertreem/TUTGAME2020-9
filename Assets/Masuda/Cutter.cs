@@ -9,16 +9,17 @@ public class Cutter : MonoBehaviour
     private float timer = 0.0f;
     private float timeBetweenShot = 3.5f;
     private float power = 1000.0f;
+    private float modoru;
     
 
     void FixedUpdate()
     {
         timer += Time.deltaTime;
-        // もしもzキーを押したならば（条件）
+        // もしもJキーを押したならば（条件）
         if (Input.GetKeyDown(KeyCode.J) && timer > timeBetweenShot)
         {
             timer = 0.0f;
-            GameObject Cutter = Instantiate(CutterPrefab, transform.position, Quaternion.identity);
+            GameObject Cutter = Instantiate(CutterPrefab, transform.position, Quaternion.Euler(0,0,45));
             Rigidbody CutterRb = Cutter.GetComponent<Rigidbody>();
             CutterRb.AddForce(transform.forward * power);
 
